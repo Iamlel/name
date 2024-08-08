@@ -1,0 +1,31 @@
+on weather change to rain or thunder:
+	cancel event
+
+on pick up:
+	cancel event
+	
+on drop:
+	cancel event
+	
+on spawn:
+	if event-spawnreason != customized:
+		cancel event
+			
+on craft:
+	cancel event
+	
+on damage of a player:
+	if attacker is a player:
+		cancel event
+	
+on hunger meter change:
+	cancel event
+	
+command /ping:
+	trigger:
+		send ping of player
+	
+command /send <text>:
+	executable by: console
+	trigger:
+		broadcast colored arg

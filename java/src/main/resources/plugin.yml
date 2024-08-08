@@ -1,0 +1,13 @@
+name: NameCore
+version: '${version}'
+main: me.lel.name.Main
+api-version: 1.18
+authors: [ lel, TypicalDoor, SkinnyNoonie ]
+description: This is a java plugin for -name-
+commands:
+  ZombieSurvival:
+    description: Use this command to start the zombie survival.
+  GetGun:
+    description: Use this command to get or give someone a gun.
+  name:
+    description: Useful commands for name.

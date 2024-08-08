@@ -1,0 +1,33 @@
+options:
+	guild: xxx
+	minecraft: xxx
+	invite: xxx
+
+on load:
+	login to "{@token}" with name "Minecraft Chat"
+
+on chat:
+	send "[Minecraft] <%player%> %message%" to channel with id "{@minecraft}"
+	
+on message receive:
+	if event-guild is guild with id "{@guild}":
+		if event-channel is channel with id "{@minecraft}":
+			#broadcast "&f[&bDiscord&f] <%event-user%> %event-message%"
+			stop
+			
+on join:
+	send uncolored join message to channel with id "{@minecraft}"
+	
+on disconnect:
+	send uncolored leave message to channel with id "{@minecraft}"
+	
+on death of a player:
+	send uncolored death message to channel with id "{@minecraft}"
+	
+command /discord:
+	trigger:
+		send "<link:https://discord.gg/{@invite}>&b&lClick me to join the discord!<reset>"
+		
+every 10 minutes:
+	broadcast "<link:https://discord.gg/{@invite}>&b&lClick me to join the discord!<reset>"
+	
